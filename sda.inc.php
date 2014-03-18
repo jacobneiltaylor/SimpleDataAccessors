@@ -14,6 +14,7 @@
             protected $defaultPort; //Providers must set this to the default port of their datasource
             
             protected $db; // Handle or object variable
+            private $statement; // Prepared statement variable
             protected $queryResult; // Result of last query
             
             // All implementations of trait methods are expected to update these values when appropriate. 
@@ -45,8 +46,14 @@
             // Generic query function
             protected abstract function query(); 
             
-            // For Prepared Statements
-            protected abstract function preparedStatement(); 
+            // Prepare a statement for execution
+            protected abstract function prepare(); 
+            
+            // Execute a prepared statement with parameters
+            protected abstract function execute(); 
+            
+            // Close a prepared statement
+            protected abstract function close();
             
             // A generator for results
             protected abstract function resultGenerator();
