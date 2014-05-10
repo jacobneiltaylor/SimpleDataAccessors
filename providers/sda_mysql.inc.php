@@ -4,7 +4,7 @@
         Copyright Taylor Networks 2014
     */
     
-    require_once 'dirname(__FILE__) . '/../sda.inc.php';
+    require_once dirname(__FILE__) . '/../sda.inc.php';
     
     trait sda_mysql
     {
